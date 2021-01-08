@@ -21,12 +21,10 @@ const Changecoins: React.FC = () => {
 
 
     useEffect(() => {
-
           //load token e validação
           async function validateToken() {
             const accessToken = localStorage.getItem("@cryto:token");
             if (!accessToken) {
-                // eslint-disable-next-line
                 history.push('/')
             }
 
@@ -39,6 +37,7 @@ const Changecoins: React.FC = () => {
                     setSelectCurrencies(resp.data)
                 })
         }
+        // eslint-disable-next-line
         validateToken();
         seachCurrency();
     }, [])
@@ -70,6 +69,7 @@ const Changecoins: React.FC = () => {
             value: newCurreny
         }
        await api.post('/cryto/btc', data)
+       // eslint-disable-next-line
             history.push('/dashboard')
       }
        
